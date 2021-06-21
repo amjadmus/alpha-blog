@@ -1,3 +1,5 @@
+# the CRUD methods (Create, Read, Update, Delte) are defined in controllers to handle interactions between the application and the database. we can also define our own methods
+
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy] #before_action helper runs the set_article function which was defined below in the givin actions
 
@@ -45,6 +47,8 @@ class ArticlesController < ApplicationController
     redirect_to articles_path
 
   end
+
+
   private
   def set_article
     return @article = Article.find(params[:id])  #params gets what ever user inputted when calling a method.
